@@ -1,0 +1,136 @@
+:root {
+    --primary-dark: #374151;
+    --primary-light: #f3f4f6;
+    --accent: #3b82f6;
+    --accent-hover: #2563eb;
+    --danger: #ef4444;
+    --danger-hover: #dc2626;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #e0e7ff 0%, #ede9fe 100%);
+    padding: 1rem;
+}
+
+.calculator {
+    width: 100%;
+    max-width: 400px;
+    background-color: white;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+                0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.display {
+    background: linear-gradient(to right, #1e40af, #3730a3);
+    padding: 2rem 1.5rem;
+    text-align: right;
+    color: white;
+}
+
+.previous-operand {
+    min-height: 1.5rem;
+    font-size: 1.1rem;
+    opacity: 0.7;
+}
+
+.current-operand {
+    font-size: 2.5rem;
+    font-weight: 300;
+    margin-top: 0.5rem;
+    word-break: break-all;
+}
+
+.keypad {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.75rem;
+    padding: 1.5rem;
+}
+
+button {
+    padding: 1.25rem;
+    font-size: 1.25rem;
+    border: none;
+    border-radius: 0.75rem;
+    background-color: #f3f4f6;
+    color: var(--primary-dark);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    user-select: none;
+}
+
+button:hover {
+    background-color: #e5e7eb;
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+.span-2 {
+    grid-column: span 2;
+}
+
+.operator {
+    background-color: #dbeafe;
+    color: var(--accent);
+}
+
+.operator:hover {
+    background-color: #bfdbfe;
+}
+
+.equals {
+    background-color: var(--accent);
+    color: white;
+}
+
+.equals:hover {
+    background-color: var(--accent-hover);
+}
+
+.clear {
+    background-color: #fee2e2;
+    color: var(--danger);
+}
+
+.clear:hover {
+    background-color: #fecaca;
+}
+
+.delete {
+    background-color: #fee2e2;
+    color: var(--danger);
+}
+
+.delete:hover {
+    background-color: #fecaca;
+}
+
+@media (max-width: 480px) {
+    .calculator {
+        max-width: 100%;
+    }
+
+    .keypad {
+        gap: 0.5rem;
+    }
+
+    button {
+        padding: 1rem;
+        font-size: 1.1rem;
+    }
+}
